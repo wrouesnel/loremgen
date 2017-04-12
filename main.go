@@ -29,7 +29,7 @@ func main() {
 
 		interval := float64(1) / c.Float64("rate")
 
-		ticker := time.Tick(time.Second * time.Duration(interval))
+		ticker := time.Tick(time.Duration(float64(time.Second) * interval))
 
 		for _ = range ticker {
 			fmt.Println(lorem.Sentence(c.Int("min-words"), c.Int("max-words")))
